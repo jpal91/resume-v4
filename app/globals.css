@@ -19,3 +19,9 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer utilities {
+  .fade-in {
+    @apply opacity-100 transition-opacity duration-1000;
+  }
+}
