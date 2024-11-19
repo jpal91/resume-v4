@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "devicons-react": "^1.3.0",
     "jotai": "^2.10.2",
     "lucide-react": "^0.460.0",
     "next": "15.0.3",

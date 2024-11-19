@@ -24,4 +24,17 @@ body {
   .fade-in {
     @apply opacity-100 transition-opacity duration-1000;
   }
+
+  .repeat-infinite {
+    animation-iteration-count: infinite;
+  }
+
+  .direction-reverse {
+    animation-direction: reverse;
+  }
+
+  .ease-linear {
+    transition-timing-function: linear;
+    animation-timing-function: linear;
+  }
 }
