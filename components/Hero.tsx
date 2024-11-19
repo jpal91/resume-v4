@@ -76,6 +76,7 @@ export const HeroTyping = () => {
       onComplete={nextPhase}
       {...t}
       className={cn(["text-xs md:text-base", t.className])}
+      textClass={cn(["text-white", t.textClass])}
     />
   ));
 };

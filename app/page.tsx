@@ -7,8 +7,8 @@ export default function Home() {
       <div className="w-full h-full">
         <GridBackground>
           <div className="w-screen h-screen flex flex-col flex-wrap p-2 content-center justify-center relative">
-            <div className="max-w-prose w-full h-auto mockup-window bg-base-300 border">
-              <div className="bg-base-200 py-4 px-6 flex flex-col gap-2">
+            <div className="max-w-prose w-full h-auto mockup-window bg-secondary dark:bg-slate-800 border shadow-xl">
+              <div className="bg-slate-900 dark:bg-black py-4 px-6 flex flex-col gap-2">
                 <HeroTyping />
               </div>
             </div>

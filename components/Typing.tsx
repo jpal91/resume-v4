@@ -1,3 +1,4 @@
+// https://animata.design/docs/text/typing-text
 "use client";
 import { ReactNode, useEffect, useMemo, useState } from "react";
 
