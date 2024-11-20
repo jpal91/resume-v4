@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { useSetAtom } from "jotai";
-import { sectionAtom } from "@/utils/atoms";
+import { sectionAtom } from "@/lib/atoms";
 
 const SECTIONS = 3;
 

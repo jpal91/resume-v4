@@ -2,7 +2,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import cn from "@/utils/cn";
+import cn from "@/lib/cn";
 import Image from "next/image";
 
 export type Card = {

@@ -3,8 +3,8 @@ import { useEffect } from "react";
 import { useAtom, useAtomValue, useSetAtom } from "jotai";
 import { ArrowDown } from "lucide-react";
 import TypingText, { type TypingTextProps } from "./Typing";
-import { heroPhaseAtom, heroTypingPhaseAtom } from "@/utils/atoms";
-import cn from "@/utils/cn";
+import { heroPhaseAtom, heroTypingPhaseAtom } from "@/lib/atoms";
+import cn from "@/lib/cn";
 
 const heroText: Array<TypingTextProps> = [
   {

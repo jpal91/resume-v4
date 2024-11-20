@@ -7,7 +7,7 @@ import {
   fetchSimpleIcons,
 } from "react-icon-cloud";
 import type { SimpleIcon } from "react-icon-cloud";
-import getColorInfo from "@/utils/colors";
+import getColorInfo from "@/lib/colors";
 
 const cloudProps: Omit<ICloud, "children"> = {
   id: "stable-id-for-csr-ssr",

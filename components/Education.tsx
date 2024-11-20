@@ -28,7 +28,7 @@ const cards: Card[] = [
       />
     ),
     className: "md:col-span-2",
-    thumbnail: "/ua.svg",
+    thumbnail: "/proj-pics/ua.svg",
   },
   {
     id: 2,
@@ -40,7 +40,7 @@ const cards: Card[] = [
       />
     ),
     className: "",
-    thumbnail: "/app_state.svg",
+    thumbnail: "/proj-pics/app_state.svg",
   },
 ];
 

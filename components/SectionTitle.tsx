@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useAtomValue } from "jotai";
-import { sectionAtom } from "@/utils/atoms";
-import cn from "@/utils/cn";
+import { sectionAtom } from "@/lib/atoms";
+import cn from "@/lib/cn";
 import HyperText from "./HyperText";
 
 const SectionTitle = ({
