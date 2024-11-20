@@ -54,7 +54,7 @@ const pauseAtom = atom(
   },
 );
 
-const heroPhaseAtom = atom(1);
+const heroPhaseAtom = atom(0);
 const heroTypingPhaseAtom = atom(0);
 
 const sectionAtom = atom(1);

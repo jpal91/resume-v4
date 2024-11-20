@@ -1,9 +1,8 @@
 // https://ui.aceternity.com/components/layout-grid
 "use client";
-import React, { useState, useRef, useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 import cn from "@/lib/cn";
-import Image from "next/image";
 
 export type Card = {
   id: number;

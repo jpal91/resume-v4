@@ -49,6 +49,7 @@ export default function FlipCard({
             src={"/proj-pics/" + image}
             alt="image"
             fill={true}
+            sizes="(min-width: 640px) 500px"
             className="h-full w-full rounded-2xl object-cover shadow-2xl shadow-black/40 z-0"
           />
           <div className="absolute bottom-4 left-4 text-lg font-bold text-white z-20">

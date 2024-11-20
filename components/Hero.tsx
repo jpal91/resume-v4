@@ -71,8 +71,8 @@ export const HeroTyping = () => {
       alwaysVisibleCount={0}
       repeat={false}
       hideCursorOnComplete={true}
-      // animated={heroTypingPhase >= i}
-      animated="show"
+      animated={heroTypingPhase >= i}
+      // animated="show"
       onComplete={nextPhase}
       {...t}
       className={cn(["text-xs md:text-base", t.className])}

@@ -11,7 +11,10 @@ export default function Home() {
       <Observer />
       <div className="w-full h-full">
         <GridBackground>
-          <div className="w-screen h-screen flex flex-col flex-wrap p-2 content-center justify-center relative">
+          <div
+            data-testid="hero-intro"
+            className="w-screen h-screen flex flex-col flex-wrap p-2 content-center justify-center relative"
+          >
             <div className="max-w-prose w-full h-auto mockup-window bg-secondary dark:bg-slate-800 border shadow-xl">
               <div className="bg-slate-900 dark:bg-black py-4 px-6 flex flex-col gap-2">
                 <HeroTyping />
@@ -21,15 +24,27 @@ export default function Home() {
           </div>
         </GridBackground>
         <div className="w-full h-screen relative flex flex-col flex-wrap content-center items-center justify-center">
-          <div id="section-2" className="absolute top-1/2 left-1/2" />
+          <div
+            data-testid="sect-2"
+            id="section-2"
+            className="absolute top-1/2 left-1/2"
+          />
           <Skills />
         </div>
         <div className="w-full h-screen relative flex flex-col flex-wrap content-center items-center justify-center">
-          <div id="section-3" className="absolute top-1/2 left-1/2" />
+          <div
+            data-testid="sect-3"
+            id="section-3"
+            className="absolute top-1/2 left-1/2"
+          />
           <Education />
         </div>
         <div className="w-full min-h-screen relative flex flex-col flex-wrap content-center items-center justify-center">
-          <div id="section-4" className="absolute top-1/2 left-1/2" />
+          <div
+            data-testid="sect-4"
+            id="section-4"
+            className="absolute top-1/2 left-1/2"
+          />
           <Projects />
         </div>
       </div>
