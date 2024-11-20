@@ -1,12 +1,12 @@
 import { test, expect } from "@playwright/test";
 
 test("it loads", async ({ page }) => {
-  const res = await page.goto("/");
+  const res = await page.goto(process.env.ENVIRONMENT_URL || "/");
   expect(res?.status()).toBeLessThan(400);
 });
 
 test("intro is showing", async ({ page }) => {
-  await page.goto("/");
+  await page.goto(process.env.ENVIRONMENT_URL || "/");
   // await page.screenshot({ path: "test-results/screenshot.jpg" });
   const hero = page.getByTestId("hero-intro");
   await expect(hero).toBeVisible();
@@ -19,7 +19,7 @@ test("intro is showing", async ({ page }) => {
 });
 
 test("skills section is loaded", async ({ page }) => {
-  await page.goto("/");
+  await page.goto(process.env.ENVIRONMENT_URL || "/");
 
   await page.getByTestId("sect-2").scrollIntoViewIfNeeded();
 
@@ -31,7 +31,7 @@ test("skills section is loaded", async ({ page }) => {
 });
 
 test("education section is loaded", async ({ page }) => {
-  await page.goto("/");
+  await page.goto(process.env.ENVIRONMENT_URL || "/");
 
   await page.getByTestId("sect-3").scrollIntoViewIfNeeded();
 
@@ -43,7 +43,7 @@ test("education section is loaded", async ({ page }) => {
 });
 
 test("projects section is loaded", async ({ page }) => {
-  await page.goto("/");
+  await page.goto(process.env.ENVIRONMENT_URL || "/");
 
   await page.getByTestId("sect-4").scrollIntoViewIfNeeded();
 
