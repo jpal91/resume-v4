@@ -12,7 +12,6 @@ const Observer = () => {
       let s = "";
       for (const ent of entries) {
         if (ent.isIntersecting) {
-          console.log("here");
           s = ent.target.id.slice(-1);
           break;
         }

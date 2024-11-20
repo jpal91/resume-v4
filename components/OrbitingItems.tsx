@@ -1,14 +1,16 @@
 // Variation of https://animata.design/docs/list/orbiting-items
 "use client";
 import { useEffect, useState, type ReactNode } from "react";
-import { useAtomValue, useSetAtom } from "jotai";
-import { sectionAtom, selectedSkillAtom } from "@/utils/atoms";
+import { useAtomValue, useSetAtom, useAtom } from "jotai";
+import {
+  sectionAtom,
+  selectedSkillAtom,
+  pauseAtom,
+  Paused,
+} from "@/utils/atoms";
 import cn from "@/utils/cn";
-
-type Item = {
-  icon: ReactNode;
-  name: string;
-};
+import { Pause } from "lucide-react";
+import { SkillItem } from "./components";
 
 interface OrbitingItemsProps {
   /**
@@ -19,7 +21,7 @@ interface OrbitingItemsProps {
   /**
    * The items to orbit around the center of the parent element.
    */
-  items: Item[];
+  items: SkillItem[];
 
   /**
    * Pause the animation when the parent element is hovered.
@@ -79,7 +81,8 @@ export default function OrbitingItems({
   const setSelected = useSetAtom(selectedSkillAtom);
   const [rendered, setRendered] = useState(false);
   const [indices, setIndices] = useState([0, 1, 2, 3, 4]);
-  const [pause, setPause] = useState(true);
+  // const [pause, setPause] = useState(true);
+  const [pause, setPause] = useAtom(pauseAtom);
   const icons = items.map(({ icon }, i) => <>{icon}</>);
 
   useEffect(() => {
@@ -89,19 +92,26 @@ export default function OrbitingItems({
       idxs.push(i % items.length);
     }
 
+    if (paused) {
+      setPause(Paused.PermOn);
+    } else {
+      setPause(Paused.PermOff);
+    }
+
     setIndices(idxs);
     setRendered(true);
   }, []);
 
   useEffect(() => {
-    setPause(paused || !rendered || section !== 2);
+    setPause(rendered && section === 2 ? Paused.ScrollOff : Paused.ScrollOn);
+    // setPause(paused || !rendered || section !== 2);
   }, [rendered, paused, section]);
 
   useEffect(() => {
     if (pause) return;
     const interval = setInterval(() => {
       setIndices((idxs) => {
-        return idxs.map((i) => (i + 1) % items.length);
+        return idxs.map((i) => (i + 5) % items.length);
       });
     }, 5000);
     return () => clearInterval(interval);
@@ -109,40 +119,31 @@ export default function OrbitingItems({
 
   const reverse = cn(
     "animate-[rotate-full_45s] ease-linear direction-reverse repeat-infinite",
-    // {
-    //   "group-hover/orbit:[animation-play-state:paused]": pauseOnHover || paused,
-    // },
     pause && "[animation-play-state:paused]",
   );
 
   const handleSelect = (name: string) => {
-    setPause(true);
+    // setPause(true);
+    setPause(Paused.HoverOn);
     setSelected(name);
   };
 
   const handleLeave = () => {
-    setSelected(null);
-    setPause(!paused && rendered && section === 2);
+    // setSelected(null);
+    // setPause(!paused && rendered && section === 2);
+    setPause(Paused.HoverOff);
   };
 
   return (
     <div
       className={cn(
-        "storybook-fix group/orbit flex items-center justify-center py-32",
+        "storybook-fix group/orbit flex items-center justify-center py-32 relative",
         containerClassName,
       )}
-      onMouseOver={() => pauseOnHover && setPause(true)}
-      onMouseLeave={() =>
-        pauseOnHover && setPause(paused || !rendered || section !== 2)
-      }
     >
       <div
         className={cn(
           "relative flex h-64 w-64 animate-[rotate-full_45s] items-center justify-center ease-linear repeat-infinite",
-          // {
-          //   "group-hover/orbit:[animation-play-state:paused]":
-          //     pauseOnHover || paused,
-          // },
           pause && "[animation-play-state:paused]",
           className,
         )}
@@ -173,6 +174,15 @@ export default function OrbitingItems({
             reverse,
           )}
         />
+      </div>
+      <div
+        className={cn([
+          "absolute bottom-[10%] left-0 btn btn-sm btn-circle",
+          pause && "btn-warning",
+        ])}
+        onClick={() => setPause(Paused.Perm)}
+      >
+        <Pause className={pause ? "" : ""} />
       </div>
     </div>
   );
