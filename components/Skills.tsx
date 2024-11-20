@@ -22,6 +22,8 @@ import {
 import type { SkillItem } from "./components";
 import ScoreBoard from "./ScoreBoard";
 
+import IconCloud from "./IconCloud";
+
 const items: SkillItem[] = [
   { icon: <ReactOriginal size={32} />, name: "React", level: 2 },
   { icon: <TailwindcssOriginal size={32} />, name: "TailwindCSS", level: 2 },
@@ -47,16 +49,17 @@ const items: SkillItem[] = [
 
 const Skills = () => {
   return (
-    <div className="flex flex-wrap w-full justify-evenly gap-4 bg-base-100 rounded-xl shadow-xl max-w-4xl p-2">
-      <ScoreBoard items={items} />
+    <div className="">
+      {/* <ScoreBoard items={items} /> */}
       <div className="">
-        <OrbitingItems
-          radius={50}
-          pauseOnHover={true}
-          paused={true}
-          className="w-80 h-80"
-          items={items}
-        />
+        {/* <OrbitingItems */}
+        {/*   radius={50} */}
+        {/*   pauseOnHover={true} */}
+        {/*   paused={true} */}
+        {/*   className="w-80 h-80" */}
+        {/*   items={items} */}
+        {/* /> */}
+        <IconCloud />
       </div>
     </div>
   );

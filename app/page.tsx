@@ -18,7 +18,10 @@ export default function Home() {
             <NextButton />
           </div>
         </GridBackground>
-        <div className="w-full h-screen relative flex flex-col flex-wrap content-center items-center justify-center">
+        <div
+          id="sect-2"
+          className="w-full h-screen relative flex flex-col flex-wrap content-center items-center justify-center"
+        >
           <div id="section-2" className="absolute top-1/2 left-1/2" />
           <Skills />
         </div>
