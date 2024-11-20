@@ -22,7 +22,7 @@ const cloudProps: Omit<ICloud, "children"> = {
   },
   canvasProps: {
     style: {
-      maxWidth: "55%",
+      maxWidth: "90%",
     },
   },
   options: {
@@ -30,7 +30,6 @@ const cloudProps: Omit<ICloud, "children"> = {
     depth: 1,
     wheelZoom: false,
     imageScale: 2,
-    activeCursor: "default",
     tooltip: "native",
     initial: [0.1, -0.1],
     clickToFront: 500,
@@ -57,6 +56,8 @@ const iconList: string[] = [
   "mysql",
   "postgresql",
   "amazonwebservices",
+  "rust",
+  "googlechrome",
 ];
 
 const useIcons = () => {

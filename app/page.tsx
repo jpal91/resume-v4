@@ -2,6 +2,7 @@ import GridBackground from "@/components/GridBackground";
 import { HeroTyping, NextButton } from "@/components/Hero";
 import Skills from "@/components/Skills";
 import Observer from "@/components/Observer";
+import SectionTitle from "@/components/SectionTitle";
 
 export default function Home() {
   return (
