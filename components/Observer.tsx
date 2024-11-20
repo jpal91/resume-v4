@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import { useSetAtom } from "jotai";
 import { sectionAtom } from "@/lib/atoms";
 
-const SECTIONS = 3;
+const SECTIONS = 4;
 
 const updateObserve = (observer: IntersectionObserver, observe = true) => {
   for (let i = 1; i < SECTIONS + 1; i++) {

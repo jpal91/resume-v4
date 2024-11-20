@@ -43,13 +43,15 @@ export default function FlipCard({
         )}
       >
         {/* Front */}
-        <div className="absolute h-full w-full [backface-visibility:hidden]">
+        <div className="absolute h-full w-full [backface-visibility:hidden] group-hover:-z-10">
+          <div className="absolute w-full h-full bg-gradient-to-t from-black/70 to-transparent from-10% to-50% z-10 rounded-2xl pointer-events-none" />
           <Image
-            src={image}
+            src={"/proj-pics/" + image}
             alt="image"
-            className="h-full w-full rounded-2xl object-cover shadow-2xl shadow-black/40"
+            fill={true}
+            className="h-full w-full rounded-2xl object-cover shadow-2xl shadow-black/40 z-0"
           />
-          <div className="absolute bottom-4 left-4 text-xl font-bold text-white">
+          <div className="absolute bottom-4 left-4 text-lg font-bold text-white z-20">
             {title}
           </div>
         </div>
@@ -61,11 +63,18 @@ export default function FlipCard({
             self[1],
           )}
         >
-          <div className="flex min-h-full flex-col gap-2">
-            <h1 className="text-xl font-bold text-white">{subtitle}</h1>
-            <p className="mt-1 border-t border-t-gray-200 py-4 text-base font-medium leading-normal text-gray-100">
+          <div className="flex min-h-full flex-col gap-2 ">
+            {subtitle && (
+              <h1 className="text-xl font-bold text-white border-b border-b-gray-200 pb-2">
+                {subtitle}
+              </h1>
+            )}
+            <p className="text-base font-medium leading-normal text-gray-100 line-clamp-5">
               {description}{" "}
             </p>
+            <button className="btn btn-xs btn-outline mt-auto">
+              Read More...
+            </button>
           </div>
         </div>
       </div>
