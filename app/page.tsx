@@ -1,8 +1,8 @@
 import GridBackground from "@/components/GridBackground";
 import { HeroTyping, NextButton } from "@/components/Hero";
 import Skills from "@/components/Skills";
+import Education from "@/components/Education";
 import Observer from "@/components/Observer";
-import SectionTitle from "@/components/SectionTitle";
 
 export default function Home() {
   return (
@@ -19,12 +19,13 @@ export default function Home() {
             <NextButton />
           </div>
         </GridBackground>
-        <div
-          id="sect-2"
-          className="w-full h-screen relative flex flex-col flex-wrap content-center items-center justify-center"
-        >
+        <div className="w-full h-screen relative flex flex-col flex-wrap content-center items-center justify-center">
           <div id="section-2" className="absolute top-1/2 left-1/2" />
           <Skills />
+        </div>
+        <div className="w-full h-screen relative flex flex-col flex-wrap content-center items-center justify-center">
+          <div id="section-3" className="absolute top-1/2 left-1/2" />
+          <Education />
         </div>
       </div>
     </main>

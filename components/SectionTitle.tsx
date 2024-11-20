@@ -28,22 +28,21 @@ const SectionTitle = ({
   }, [section]);
 
   return (
-    <div
-      className={cn([
-        "absolute top-5 left-5 rounded-lg px-4 flex items-center gap-2",
-        className,
-      ])}
-    >
-      <span className="text-accent font-mono text-xl font-bold py-2">
-        assert
-      </span>
-      {triggered ? (
-        <HyperText text={title} className="text-xl font-bold" />
-      ) : (
-        <div className="opacity-0 text-xl font-mono font-bold py-2">
-          {title.toUpperCase()}
-        </div>
-      )}
+    <div className="absolute top-5 left-5 divider divider-start w-11/12">
+      <div
+        className={cn([" rounded-lg px-4 flex items-center gap-2", className])}
+      >
+        <span className="text-purple-700 dark:text-accent font-mono text-xl font-bold py-2">
+          assert
+        </span>
+        {triggered ? (
+          <HyperText text={title} className="text-xl font-bold" />
+        ) : (
+          <div className="opacity-0 text-xl font-mono font-bold py-2">
+            {title.toUpperCase()}
+          </div>
+        )}
+      </div>
     </div>
   );
 };
