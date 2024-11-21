@@ -34,13 +34,14 @@ export const NextButton = () => {
   return (
     <div className=" absolute bottom-[15%] left-1/2 -translate-x-1/2">
       <button
+        data-testid="hero-btn"
         className={cn([
           "btn btn-circle btn-neutral opacity-0",
           heroPhase > 0 && "fade-in !transition-all hover:scale-110",
         ])}
         onClick={() =>
           document
-            .getElementById("section-2-intersect")
+            .getElementById("section-2")
             ?.scrollIntoView({ behavior: "smooth", block: "center" })
         }
       >

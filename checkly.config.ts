@@ -1,9 +1,9 @@
 import { defineConfig } from "checkly";
 
 export default defineConfig({
-  projectName: "Website Monitoring",
-  logicalId: "website-monitoring-1",
-  repoUrl: "https://github.com/acme/website",
+  projectName: "Resume",
+  logicalId: "resume-monitoring-1",
+  repoUrl: "https://github.com/jpal91/resume-v4",
   checks: {
     activated: true,
     muted: false,
@@ -15,7 +15,7 @@ export default defineConfig({
     checkMatch: "**/__checks__/*.check.ts",
     ignoreDirectoriesMatch: [],
     browserChecks: {
-      frequency: 10,
+      frequency: 30,
       testMatch: "**/__checks__/*.spec.ts",
     },
   },

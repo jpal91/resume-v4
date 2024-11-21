@@ -16,10 +16,15 @@ test("intro is showing", async ({ page }) => {
 
   // const first = page.getByText("rm -rf");
   // await expect(first).toBeVisible({ timeout: 10_000 });
+  //
+  await page.getByTestId("hero-btn").click();
+  const next = page.getByTestId("sect-2");
+
+  await expect(next).toBeInViewport();
 });
 
 test("skills section is loaded", async ({ page }) => {
-  await page.goto(process.env.ENVIRONMENT_URL || "/");
+  await page.goto(process.env.ENVIRONMENT_URL! || "/");
 
   await page.getByTestId("sect-2").scrollIntoViewIfNeeded();
 
